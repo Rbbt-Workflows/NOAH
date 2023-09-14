@@ -34,7 +34,7 @@ module NOAH
     output = file('output')
     Open.write(input_csv, csv.gsub(',',"\t"))
     model = 'Noah.9.pkl'
-    CMD.cmd_log("env PYTHONPATH=#{Rbbt.software.opt.find} python #{Rbbt.software.opt.NOAH.find}/main_NOAH.py -i #{input_csv} -o #{output} -model #{Rbbt.share.databases.NOAH[model].find}")
+    CMD.cmd_log("env PYTHONPATH=#{Rbbt.software.opt.find} python #{Rbbt.software.opt.NOAH.find}/main_NOAH.py -i #{input_csv} -o #{output} -model #{Rbbt.share.databases.NOAH[model].produce.find}")
 
     dumper = TSV::Dumper.new :key_fields => "Pair", :fields => ["Allele", "Peptide", "NOAH_score"], :type => :list
     dumper.init
