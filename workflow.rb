@@ -46,6 +46,8 @@ module NOAH
     end
   end
 
+  export :predict
+
 
 end
 
